@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const notes = require("./db/db.json");
+const uniqid = require("uniqid");
 
 // instantiate the server
 const app = express();
@@ -23,10 +24,30 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
-// get request for notes
+// catch all for get request not defined
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/index.html"))
+});
+
+// get request for all notes
 app.get("/api/notes", (req, res) => {
     res.json(notes);
 });
+
+// get request for a single note
+app.get("/api/notes/:note_id", (req, res) => {
+    if (!req.body || !req.params.note_id) {
+        res.json("Note not found");
+    }
+    const noteId = req.params.note_id;
+    for (let i = 0; i < notes.length; i++) {
+        const currentNote = notes[i];
+        if (currentNote.note_id === noteId) {
+            res.json(noteId);
+            return;
+        }
+    }
+})
 
 app.post("/api/notes", (req, res) => {
     
@@ -38,7 +59,8 @@ app.post("/api/notes", (req, res) => {
     // new object to save
     const newNote = {
         title, 
-        text
+        text,
+        noted_id: uniqid()
     };
     // obtain existing notes
     fs.readFile("./db/db.json", "utf8", (err, data) => {
