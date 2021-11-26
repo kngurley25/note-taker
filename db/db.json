@@ -1,8 +1,34 @@
-{
-    "notes": [
-        {
-            "title":"Test Title",
-            "text":"Test text"
-        }
-    ]
-}
+[
+  {
+    "title": "Test Title",
+    "text": "Test text"
+  },
+  {
+    "title": "number one",
+    "text": "this is test note number one"
+  },
+  {
+    "title": "number one",
+    "text": "this is test note number one"
+  },
+  {
+    "title": "number one",
+    "text": "this is test note number one"
+  },
+  {
+    "title": "number one",
+    "text": "this is test note number one"
+  },
+  {
+    "title": "number one",
+    "text": "this is test note number one"
+  },
+  {
+    "title": "number one",
+    "text": "this is test note number one"
+  },
+  {
+    "title": "number one",
+    "text": "this is test note number one"
+  }
+]
