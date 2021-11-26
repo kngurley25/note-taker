@@ -10,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kngurley25/note-taker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/kngurley25/note-taker/issues"
+  },
+  "homepage": "https://github.com/kngurley25/note-taker#readme"
 }
