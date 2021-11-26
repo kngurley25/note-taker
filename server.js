@@ -8,7 +8,7 @@ const { notes } = require("./db/db.json");
 
 
 app.get("/api/notes", (req, res) => {
-    res.send("testing");
+    res.json(notes);
 })
 
 //tell server to listen to requests
