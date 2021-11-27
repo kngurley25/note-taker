@@ -59,25 +59,25 @@ app.post("/api/notes", (req, res) => {
         text,
         id: uniqid()
     };
+    // console.log(newNote);
     // obtain existing notes
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
             console.error(err);
         }
 
-        // add new note
         const parsedNotes = JSON.parse(data);
         parsedNotes.push(newNote);
 
         // write updated notes back to file
-        fs.writeFileSync(
+        fs.writeFile(
             path.join(__dirname, "./db/db.json"),
             JSON.stringify(parsedNotes, null, 2),
             (err) => 
                 err 
                 ? console.error(err) 
                 : console.log(`Note has been written to JSON file`)
-        )
+        );
     });
     const response = {
         status: "success",

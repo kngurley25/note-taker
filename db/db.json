@@ -2,43 +2,5 @@
   {
     "title": "Test Title",
     "text": "Test text"
-  },
-  {
-    "title": "number one",
-    "text": "sample note one",
-    "noted_id": "108xhmi3ckwh27mcq"
-  },
-  {
-    "title": "number one",
-    "text": "sample note one",
-    "noted_id": "108xhm97skwh2al6r"
-  },
-  {
-    "title": "number two",
-    "text": "sample note two",
-    "noted_id": "108xhm97skwh2b3se"
-  },
-  {
-    "title": "number three",
-    "text": "text three",
-    "noted_id": "108xhmki4kwh2eiq9"
-  },
-  {
-    "title": "test four",
-    "text": "testing note four",
-    "noted_id": "108xhmiu4kwh9plyq"
-  },
-  {
-    "title": "number two",
-    "text": "sample note two"
-  },
-  {
-    "title": "john gaito",
-    "text": "sample note"
-  },
-  {
-    "title": "john gaito",
-    "text": "sample note",
-    "id": "108xhmfickwhcalgq"
   }
 ]
