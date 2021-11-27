@@ -14,36 +14,33 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// get home html page
+// html routes
 app.get("/", (req, res) => 
     res.sendFile(path.join(__dirname, "/public/index.html"))
 );
 
-// get notes html page 
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
 // catch all for get request not defined
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "/public/index.html"))
-});
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "/public/index.html"))
+// });
 
-// get request for all notes
+// API routes - get request for all notes
 app.get("/api/notes", (req, res) => {
     res.json(notes);
+
 });
 
-// get request for a single note
-app.get("/api/notes/:note_id", (req, res) => {
-    if (!req.body || !req.params.note_id) {
-        res.json("Note not found");
-    }
-    const noteId = req.params.note_id;
+// API routes - get request for a single note
+app.get("/api/notes/:id", (req, res) => {
+    const noteId = req.params.id;
     for (let i = 0; i < notes.length; i++) {
         const currentNote = notes[i];
-        if (currentNote.note_id === noteId) {
-            res.json(noteId);
+        if (currentNote.id === noteId) {
+            res.json(currentNote);
             return;
         }
     }
@@ -60,7 +57,7 @@ app.post("/api/notes", (req, res) => {
     const newNote = {
         title, 
         text,
-        noted_id: uniqid()
+        id: uniqid()
     };
     // obtain existing notes
     fs.readFile("./db/db.json", "utf8", (err, data) => {
