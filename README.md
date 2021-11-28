@@ -1,12 +1,12 @@
 # note-taker
 
 ## Description
-An application in which a user can quickly write and save notes.
+An application in which a user can quickly write and save notes.  
 User can add and delete notes with simple easy-to-use interface. 
 
 ## Usage
-To use this application, click on deployed application link below:
-https://rocky-sierra-13505.herokuapp.com/
+To use this application, click on deployed application link below:  
+[Note Taker](https://rocky-sierra-13505.herokuapp.com/){:target="_blank"}
 
 ## Technologies
 - JavaScript
