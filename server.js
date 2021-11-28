@@ -24,9 +24,9 @@ app.get('/notes', (req, res) => {
 });
 
 // catch all for get request not defined
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "/public/index.html"))
-// });
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/index.html"))
+});
 
 // API routes - get request for all notes
 app.get("/api/notes", (req, res) => {
