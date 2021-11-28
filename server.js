@@ -85,6 +85,31 @@ app.post("/api/notes", (req, res) => {
     res.json(response);
 });
 
+app.delete("/api/notes/:id", (req, res) => {
+    const currentNoteId = req.params.id;
+
+    // obtain existing notes
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
+        if (err) {
+            console.error(err);
+        }
+
+        const parsedNotes = JSON.parse(data);
+        const updatedNotes = parsedNotes.filter(note => note.id != currentNoteId)
+
+        // write updated notes back to file
+        fs.writeFile(
+            path.join(__dirname, "./db/db.json"),
+            JSON.stringify(updatedNotes, null, 2),
+            (err) => 
+                err 
+                ? console.error(err) 
+                : console.log(`Note has been removed from JSON file`)
+        );
+    });
+    res.json(`Note deleted`);
+})
+
 //tell server to listen to requests
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}.`);

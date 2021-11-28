@@ -2,20 +2,5 @@
   {
     "title": "Test Title",
     "text": "Test text"
-  },
-  {
-    "title": "test note one",
-    "text": "testing for note one",
-    "id": "108xhmd20kwjk3yf5"
-  },
-  {
-    "title": "test with update",
-    "text": "Test with updated res.sendfile",
-    "id": "108xhmhzskwjkonp3"
-  },
-  {
-    "title": "second test with update",
-    "text": "testing in browser",
-    "id": "108xhmhzskwjkpifd"
   }
 ]
