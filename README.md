@@ -6,7 +6,7 @@ User can add and delete notes with simple easy-to-use interface.
 
 ## Usage
 To use this application, click on deployed application link below:  
-[Note Taker](https://rocky-sierra-13505.herokuapp.com/){:target="_blank"}
+[Note Taker](https://rocky-sierra-13505.herokuapp.com/)
 
 ## Technologies
 - JavaScript
