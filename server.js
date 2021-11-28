@@ -16,7 +16,7 @@ app.use(express.static("public"));
 
 // html routes
 app.get("/", (req, res) => 
-    res.sendFile(path.join(__dirname, "/public/index.html"))
+    res.sendFile(path.join(__dirname, "./public/index.html"))
 );
 
 app.get('/notes', (req, res) => {
@@ -30,8 +30,7 @@ app.get('/notes', (req, res) => {
 
 // API routes - get request for all notes
 app.get("/api/notes", (req, res) => {
-    res.json(notes);
-
+    res.sendFile(path.join(__dirname, "./db/db.json"));
 });
 
 // API routes - get request for a single note
@@ -59,7 +58,7 @@ app.post("/api/notes", (req, res) => {
         text,
         id: uniqid()
     };
-    // console.log(newNote);
+
     // obtain existing notes
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
